@@ -1,4 +1,5 @@
 ﻿using MoviesApplication.Models;
+using MoviesApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +20,29 @@ namespace MoviesApplication.Controllers
         // GET: Movie
         public ActionResult Index()
         {
-            return View();
+            var movies = _context.Movies.ToList();
+
+            return View(movies);
+        }
+
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+            var viewModel = new NewMovieViewModel()
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
         }
 
         [HttpPost]
         public ActionResult Add(Movie movie )
         {
-            
+            _context.Movies.Add(movie);
+            _context.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index", "Movie");
         }
     }
 }
