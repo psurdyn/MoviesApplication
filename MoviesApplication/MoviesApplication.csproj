@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201810221839133_AddingBaseModels.Designer.cs">
       <DependentUpon>201810221839133_AddingBaseModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810230951213_InsertGenreDate.cs" />
+    <Compile Include="Migrations\201810230951213_InsertGenreDate.Designer.cs">
+      <DependentUpon>201810230951213_InsertGenreDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -224,6 +228,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810221839133_AddingBaseModels.resx">
       <DependentUpon>201810221839133_AddingBaseModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230951213_InsertGenreDate.resx">
+      <DependentUpon>201810230951213_InsertGenreDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

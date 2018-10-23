@@ -1,5 +1,6 @@
 namespace MoviesApplication.Migrations
 {
+    using MoviesApplication.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,27 @@ namespace MoviesApplication.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            Genre genre = new Genre()
+            {
+                Name = "Science-Fiction"
+            };
+
+            Genre genre2 = new Genre()
+            {
+                Name = "Thriller"
+            };
+
+            Genre genre3 = new Genre()
+            {
+                Name = "Comedy"
+            };
+
+            context.Genres.Add(genre);
+            context.Genres.Add(genre2);
+            context.Genres.Add(genre3);
+
+            context.SaveChanges();
         }
     }
 }
